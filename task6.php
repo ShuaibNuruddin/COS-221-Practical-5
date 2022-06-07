@@ -14,7 +14,7 @@
     $tournament5 = array();
     $tournament6 = array();
 
-    $tournaments = array($tournament1,$tournament2,$tournament3,$tournament4,$tournament5,$tournament6);
+    $tournaments = array($tournament1,$tournament2,$tournament3,$tournament4,$tournament5,$tournament6); //This stores the data
 
     srand(10);
 
@@ -43,10 +43,48 @@
         }
     }
 
+    //We are done generating the data;
     var_dump($tournaments);
 
-    /*for ($tournament = 0;$tournament<$no_of_tournaments;$tournament++){
-        echo "Tournament ".$tournament;
-        echo "Tournament ID ".;
-    }*/
+    $hostIP = "127.0.0.1";
+    $username = "root";
+    $password = "password";
+
+    $connection = new mysqli($hostIP,$username,$password);
+
+    if ($connection->connect_error){
+        die("The connection has failed: ".$connection->connect_error);
+    }else{
+        $connection->select_db("otakus_cricket_sport_db");
+    }
+    
+    for ($tournament = 0;$tournament<$no_of_tournaments;$tournament++){
+        $format = $tournaments[$tournament]["tournament_format"];
+        $winning_team = $tournaments[$tournament]["winner_team_id"];
+        $runner_up_team = $tournaments[$tournament]["runner_up_team_id"];
+        $player_highest_runs=$tournaments[$tournament]["player_most_runs_id"];
+        $player_highest_wickets=$tournaments[$tournament]["player_most_wickets_id"];
+        $id=$tournaments[$tournament]["tournament_id"];
+        $sql_query = "INSERT INTO tournament (tournament_format,winner_team_id,runner_up_team_id,player_most_runs_id,player_most_wickets_id,tournament_id) VALUES($format,$winning_team,$runner_up_team,$player_highest_runs,$player_highest_wickets,$id)";
+        $connection->query($sql_query);
+    }
+
+    for ($tournament = 0;$tournament<$no_of_tournaments;$tournament++){
+        
+        for ($team = 0;$team<$no_of_teams;$team++){
+            $id = $tournaments[$tournament]["teams"]["Team ".($team+1)]["team_id"];
+            $total_runs = $tournaments[$tournament]["teams"]["Team ".($team+1)]["total_runs"];
+            $sql_query = "INSERT INTO team (id,total_runs) VALUES($id,$total_runs)";
+            $connection->query($sql_query);
+
+            for ($player=0;$player<=10;$player++){
+                $id = $tournaments[$tournament]["teams"]["Team ".($team+1)]["player_ids"][$player];
+                $sql_query = "INSERT INTO player (id) VALUES($id)";
+            }
+            $tournaments[$tournament]["teams"]["Team ".($team+1)]=array();
+            $tournaments[$tournament]["teams"]["Team ".($team+1)]["player_ids"] = range($player_id,$player_id+10);
+        }
+    }
+
+    $connection->close();
 ?>
