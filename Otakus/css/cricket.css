@@ -1,0 +1,56 @@
+div.nav ~ div{
+    border:1px solid grey;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+    background-color: whitesmoke;
+}
+
+.nav{
+    background-color: black;
+    display: flex;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    width: fit-content;
+    overflow: hidden;
+}
+
+
+.ls{
+    font-size: larger;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.ls:hover{
+    background-color: blue;
+    transition: .4s;
+}
+
+.dropdown{
+    width: fit-content;
+    display: none;
+    padding:10px;
+    text-align:left;
+    border-radius: 2px;
+}
+
+.ls:hover a ~ div{
+    position: absolute;
+    top:42px;
+    display:block;
+    background-color: grey;
+    transform: translateX(-10px);
+}
+
+.dropdown a:hover{
+   color:aqua;
+}
+
+.logout{
+    float: right;
+}
