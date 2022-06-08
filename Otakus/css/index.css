@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   background-color: rgba(0,250,250,.5);
+}
+
+.login_wrapper{
+    height: 100%;
+    width:fit-content;
+    margin:auto;
+    padding: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.input_field, .signup{
+    width: 100%;
+    height:fit-content;
+    padding: 10px;
+}
+
+.input_field input, div.signup input{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border:none;
+    outline: none;
+    padding:10px;
+    border-bottom: 1px solid grey;
+    border-radius: 10px;
+}
+.input_field label{
+    position: absolute;
+    left:40.5%;
+    color: grey;
+    pointer-events:none;
+    padding:10px;
+    font-size: 18px;
+    transition: .4s;
+}
+
+input:focus ~ label, input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 16px;
+  color:black;
+  /*text-shadow: 2px 2px 2px;*/
+  transition: .4s;
+}
+
+.outer{
+    width:100%;
+    padding:0px;
+    padding-top: 15px;
+    height:40px;
+    background-color: black;
+    animation: colorchanger 5s infinite;
+}
+
+.inner{
+    position: absolute;
+    height:10px;
+    width:25%;
+    background-color: white;
+    animation: movehorizontal 10s infinite;
+}
+
+div.signup input{
+    color:grey;
+    background-color: aquamarine;
+}
+
+div.signup input:hover{
+    color:white;
+    background-color: black;
+}
+
+@keyframes colorchanger{
+    0%{
+        background-color: lightgreen; 
+    }
+    33%{
+        background-color: red;
+    }
+    66%{
+        background-color: yellow;
+    }
+    100%{
+        background-color: skyblue;
+    }
+}
+   
+@keyframes movehorizontal{
+    0%{
+        left:0%;
+    }
+    33%{
+        left:75%;
+    }
+    66%{
+        left:25%;
+    }
+    100%{
+        left:50%;
+    }
+}
+
+
+

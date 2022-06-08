@@ -1,0 +1,32 @@
+/**style file for the news site**/
+body,html{
+    height:100%;
+    background-image:url(../img/rise.jpg);
+}
+.bimg{
+    background-size:cover;
+    background-position:absolute;
+    color:white;
+}
+.tl{
+    position:absolute;
+    left:16px;
+}
+.md{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+}
+.bl{
+    position:absolute;
+    bottom:0px;
+    left:16px;
+}
+diV{
+    box-shadow:none;
+}
+.bimg, .tl, .md, .bl{
+    box-shadow: none;
+}

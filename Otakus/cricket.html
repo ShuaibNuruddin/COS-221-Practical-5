@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>O_Cricket_site</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/cricket.css">
+    </head>
+    <body>
+        <div class="nav">
+            <ul class="nav list">
+                <li class="ls"><a href="cricket.html">Home</a></li> 
+                <li class="ls"><a href="#">Live</a></li>
+                <li class="ls"><a href="#">Teams</a>
+                    <div class="dropdown">
+                        <a href="teams.html">Men</a><br>
+                        <a href="teams.html">Women</a><br>
+                    </div>
+                </li>
+                <li class="ls"><a href="#">Rankings</a>
+                    <div class="dropdown m">
+                        <div>
+                            <h3>Women's rankings</h3><br>
+                            <a href="#">Player Ranking</a><br>
+                            <a href="#">Team Ranking</a><br>
+                            <a href="#">Player records</a><br>
+                            <a href="#">Overview</a><br>
+                        </div>
+                        <div>
+                            <h3>Men's rankings</h3><br>
+                            <a href="#">Player Ranking</a><br>
+                            <a href="#">Team Ranking</a><br>
+                            <a href="#">Player records</a><br>
+                            <a href="#">Overview</a><br>
+                        </div>
+                    </div>
+                </li>
+                <li class="ls"><a href="#">More</a>
+                    <div class="dropdown">
+                        <a href="#">Orginisations</a><br>
+                        <a href="#">Turnaments</a><br>
+                        <a href="#">About</a><br>
+                    </div>
+                </li>
+            </ul>
+            <div class="logout">
+                <form method="post" action="php/logout.php">
+                    <input type="submit" name="logout" value="logout">
+                </form>
+            </div>
+        </div>
+        <div class="content">
+        </div>
+        <div class="footer">
+        </div>
+    </body>
+</html>

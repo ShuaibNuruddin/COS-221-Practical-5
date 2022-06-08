@@ -1,0 +1,19 @@
+div.teams{
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    display: flex;
+}
+
+div.team{
+    width: 252px;
+    border: 1px solid silver;
+    padding: 10px;
+    margin: 10px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+}
+
+.team a{
+    color:black;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Signup</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="outer">
+            <div class="inner">
+            </div>
+        </div>
+        <div class="login_wrapper">
+            <div class="input_field"><h3>Signup</h3></div>
+            <form method="post" action="php/signup.php">
+                <div class="input_field">
+                    <input type="text" name="Name" autocomplete="off" required>
+                    <label for="user">Name</label>
+                </div>
+                <div class="input_field">
+                    <input type="text" name="Surname" autocomplete="off" required>
+                    <label for="user">Surname</label>
+                </div>
+                <div class="input_field">
+                    <input type="email" name="Email" autocomplete="off" required>
+                    <label for="user">Email</label>
+                </div>
+                <div class="input_field" id="p">
+                    <input type="password" name="Password" id="pass" autocomplete="off" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="input_field" id="verify">
+                    <input type="password" name="V_password" id="user_pass" autocomplete="off" required>
+                    <label for="password">Verify Password</label>
+                </div>
+
+                <div class="signup">
+                    <input type="submit" name="submit" value="submit">
+                    <br><br>
+                    Login page: <a href="index.html">Login</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
